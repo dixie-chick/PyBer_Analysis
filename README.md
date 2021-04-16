@@ -1,8 +1,19 @@
 # PyBer_Analysis
-matplotlib
+Python using matplotlib and Pandas in Jupyter Notebook
+## PyBer Launch - Introduction
+This analysis for ride sharing platform, Pyber, writes Python using Pandas Library and Matplotlib in Jupyter Notebook to visualize how weekly fares across city types (Urban, Suburban and Rural) differ. This code and the visualtizations can be refactored to view differences of rides by city type, number of riders by city type, and number of drivers by city allowing PyBer to improve access to ride sharing services and determine affordability by city type.
 
+First analysis shown by the PyBer code showcase the relationshp btw type of city and number of drivers and riders and percentage of total fares by rider, driver and type of city
 
-if you fail to plan, you plan to fail.
+charts showcase relationshp between the type of city and number of drivers and riders as well as percentage of total fares of riders and drivers by type of city
+## Devlopment
+### if you fail to plan, you plan to fail.
+In the first analysis [Pyber.ipyng](http://localhost:8888/notebooks/PyBer_Analysis/Pyber.ipynb)
+very large data files
+
+1. explortory analysis
+2.  visulasiations to show the story
+3. 
 
 You come up with the following list of steps and deliverables:
 
@@ -21,3 +32,8 @@ Create a pie chart that visualizes each of the following data for each city type
 The percent of total fares.
 The percent of total rides.
 The percent of total drivers.
+
+
+Overview of the analysis: Explain the purpose of the new analysis.
+Results: Using images from the summary DataFrame and multiple-line chart, describe the differences in ride-sharing data among the different city types.
+Summary: Based on the results, provide three business recommendations to the CEO for addressing any disparities among the city types.
