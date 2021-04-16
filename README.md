@@ -75,6 +75,6 @@ We can analyse these rsults across a 5 month multi-line graph. To start, the gra
 
 Secondly, Suburban rides might be increased by building brand awareness from focusing on certain demographics such as age. By pulling rider data and formatting, we could understand what kinds of riders are most active on the app. PyBer might also look to understand peak times such as the end of Februrary or March. If no outliers skew the total fares, we should look to understand what caused these spikes.  
 
-Finally, we can see from the DataFrame that drivers outweigh riders, creating the lowest average fare per ride, which might disincentivize drivers . PyBer might limit drivers in urban areas during certain times.
+Finally, we can see from the DataFrame that drivers outweigh riders, creating the lowest average fare per ride, which might disincentivize drivers. PyBer might limit drivers in urban areas during certain times.
 
 PyBer can use this code to run montly, yearly, even daily analyses and can refactor the code to be used with number  of drivers, riders and/or fares.
