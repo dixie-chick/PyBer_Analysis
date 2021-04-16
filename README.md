@@ -9,12 +9,23 @@ charts showcase relationshp between the type of city and number of drivers and r
 ## Devlopment
 ### if you fail to plan, you plan to fail
 In the first analysis [Pyber.ipyng](http://localhost:8888/notebooks/PyBer_Analysis/Pyber.ipynb) an exploratory analysis ran through some very large csv data files
-Using <<pd.merge>>, groupby()
-very large data files
+DataFrames were merged alongside groupby(), .count(), .sum(), .mean, to understand average fares, total rides, and total drivers by city type
 
-1. explortory analysis
-2.  visulasiations to show the story
-3. 
+```
+#Sum of fares for each city type
+sum_fares_by_type = pyber_data_df.groupby(["type"]).sum()["fare"]
+
+# Ride Count for Urban Cities
+urban_ride_count = urban_cities_df.groupby(["city"]).count()["ride_id"]
+
+#Average Fare in Urban Cities
+urban_avg_fare = urban_cities_df.groupby(["city"]).mean()["fare"]
+
+```
+
+
+Charts including scatter, pie and box & whiskers help visualize the story expressing outliers, city type with most activity, and more:
+
 
 You come up with the following list of steps and deliverables:
 
@@ -34,7 +45,25 @@ The percent of total fares.
 The percent of total rides.
 The percent of total drivers.
 
+In the second analysis, first code was refactored the code from Pyber to create a summary DataFrame for total rides, total drivers, total fares, and averages
 
-Overview of the analysis: Explain the purpose of the new analysis.
+```
+# Get total rides by city type
+total_rides = pyber_data_df.groupby(["type"]).count()["ride_id"]
+
+#Get total drivers by city type
+total_drivers =  city_data_df.groupby(["type"]).sum()["driver_count"]
+
+```
+
+** Refactored Code Alert!** Code from School_District_Analysis was refactored to clean up the DataFrame
+
+Caution! knowing when to use count() vs sum()
+using city_data_df vs pyber_data
+
+Next, using groupby() pivot(), resample(), and loc() a  DataFrame was created to be used for a multi line graph showing total fares for each week by city type
+
+** The index must be reset to a datetime datatype in order to resample() the DataFrame into weekly bins**
+
 Results: Using images from the summary DataFrame and multiple-line chart, describe the differences in ride-sharing data among the different city types.
 Summary: Based on the results, provide three business recommendations to the CEO for addressing any disparities among the city types.
