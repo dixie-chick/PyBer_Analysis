@@ -33,7 +33,7 @@ Finally, Charts including scatter, pie and box & whiskers help visualize the sto
 ![charts](https://user-images.githubusercontent.com/79612565/115090829-c32caf00-9eca-11eb-95ba-50adc3868ac8.png)
 
 ### Analysis 2
-1. In the second analysis, first code was refactored the code from Pyber to create a summary DataFrame for total rides, total drivers, total fares, and averages
+1. In the second analysis, code was refactored from Analyis Pyber to create a summary DataFrame for total rides, total drivers, total fares, and averages
 
 ```
 # Get total rides by city type
@@ -46,7 +46,7 @@ total_drivers =  city_data_df.groupby(["type"]).sum()["driver_count"]
 
 **Caution!** 
 - Using count() vs sum()
-- Using city_data_df vs pyber_data_df: in order to get the accurate count of drivers by city type, the city_data_df is used over merged pyber_data_df
+- Using city_data_df vs pyber_data_df: in order to get the accurate count of drivers by city type, the city_data_df is used over merged pyber_data_df so counts aren't doubled.
 
 **Refactored Code Ahead!** Code from School_District_Analysis was refactored to clean up the DataFrame
 
@@ -62,7 +62,7 @@ pyber_summary_df
 
 - ![Clean_DF](https://user-images.githubusercontent.com/79612565/115090845-d2136180-9eca-11eb-977d-ad78abf04781.png)
 
-2. Next, using groupby() pivot(), resample(), and loc() a  DataFrame was created to be used for a multi line graph showing total fares for each week by city type so counts aren't doubled.
+2. Next, using groupby() pivot(), resample(), and loc() a  DataFrame was created to be used for a multi line graph showing total fares for each week by city type 
 
 ** The index must be reset to a datetime datatype in order to resample() the DataFrame into weekly bins**
 
