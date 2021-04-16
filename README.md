@@ -1,15 +1,19 @@
 # PyBer_Analysis
 Python using matplotlib and Pandas in Jupyter Notebook
+
 ## PyBer Launch - Introduction
 This analysis for ride sharing platform, Pyber, writes Python using Pandas Library and Matplotlib in Jupyter Notebook to visualize how weekly fares across city types (Urban, Suburban and Rural) differ. This code and the visualtizations can be refactored to view differences of rides by city type, number of riders by city type, and number of drivers by city allowing PyBer to improve access to ride sharing services and determine affordability by city type.
 
-First analysis shown by the PyBer code showcase the relationshp btw type of city and number of drivers and riders and percentage of total fares by rider, driver and type of city
+The entire project consisted of two analyses Pyber and Pyber_Challenge broken down below.
 
-charts showcase relationshp between the type of city and number of drivers and riders as well as percentage of total fares of riders and drivers by type of city
 ## Devlopment
 ### if you fail to plan, you plan to fail
-In the first analysis [Pyber.ipyng](http://localhost:8888/notebooks/PyBer_Analysis/Pyber.ipynb) an exploratory analysis ran through some very large csv data files
-DataFrames were merged alongside groupby(), .count(), .sum(), .mean, to understand average fares, total rides, and total drivers by city type
+There's _alot_ of data! A quick data scan followed by writing out goals of the project helps stay organized. 
+
+### Analysis 1
+In the first analysis [Pyber.ipyng](http://localhost:8888/notebooks/PyBer_Analysis/Pyber.ipynb) an exploratory analysis ran through some very large csv data files.
+
+Then, DataFrames were merged alongside groupby(), .count(), .sum(), .mean, to understand average fares, total rides, and total drivers by city type
 
 ```
 #Sum of fares for each city type
@@ -23,12 +27,12 @@ urban_avg_fare = urban_cities_df.groupby(["city"]).mean()["fare"]
 
 ```
 
+Finally, Charts including scatter, pie and box & whiskers help visualize the story expressing outliers, city type with most activity, and more. Charts showcase relationshps between the type of city and number of drivers and riders as well as percentage of total fares of riders and drivers by type of city.
 
-Charts including scatter, pie and box & whiskers help visualize the story expressing outliers, city type with most activity, and more:
 
 ![charts](https://user-images.githubusercontent.com/79612565/115090829-c32caf00-9eca-11eb-95ba-50adc3868ac8.png)
 
-
+### Analysis 2
 1. In the second analysis, first code was refactored the code from Pyber to create a summary DataFrame for total rides, total drivers, total fares, and averages
 
 ```
@@ -42,7 +46,7 @@ total_drivers =  city_data_df.groupby(["type"]).sum()["driver_count"]
 
 **Caution!** 
 - Using count() vs sum()
-Using city_data_df vs pyber_data_df: in order to get the accurate count of drivers by city type, the city_data_df is used over merged pyber_data_df
+- Using city_data_df vs pyber_data_df: in order to get the accurate count of drivers by city type, the city_data_df is used over merged pyber_data_df
 
 **Refactored Code Ahead!** Code from School_District_Analysis was refactored to clean up the DataFrame
 
@@ -58,7 +62,7 @@ pyber_summary_df
 
 - ![Clean_DF](https://user-images.githubusercontent.com/79612565/115090845-d2136180-9eca-11eb-977d-ad78abf04781.png)
 
-2. Next, using groupby() pivot(), resample(), and loc() a  DataFrame was created to be used for a multi line graph showing total fares for each week by city type so counts aren't doubled
+2. Next, using groupby() pivot(), resample(), and loc() a  DataFrame was created to be used for a multi line graph showing total fares for each week by city type so counts aren't doubled.
 
 ** The index must be reset to a datetime datatype in order to resample() the DataFrame into weekly bins**
 
@@ -73,3 +77,4 @@ Secondly, Suburban rides might be increased by building brand awareness from foc
 
 Finally, we can see from the DataFrame that drivers outweigh riders, creating the lowest average fare per ride, which might disincentivize drivers . PyBer might limit drivers in urban areas during certain times.
 
+PyBer can use this code to run montly, yearly, even daily analyses and can refactor the code to be used with number  of drivers, riders and/or fares.
