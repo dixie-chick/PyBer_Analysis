@@ -26,26 +26,10 @@ urban_avg_fare = urban_cities_df.groupby(["city"]).mean()["fare"]
 
 Charts including scatter, pie and box & whiskers help visualize the story expressing outliers, city type with most activity, and more:
 
+![charts](https://user-images.githubusercontent.com/79612565/115090829-c32caf00-9eca-11eb-95ba-50adc3868ac8.png)
 
-You come up with the following list of steps and deliverables:
 
-Import your data into a Pandas DataFrame.
-Merge your DataFrames.
-Create a bubble chart that showcases the average fare versus the total number of rides with bubble size based on the total number of drivers for each city type, including urban, suburban, and rural.
-Determine the mean, median, and mode for the following:
-The total number of rides for each city type.
-The average fares for each city type.
-The total number of drivers for each city type.
-Create box-and-whisker plots that visualize each of the following to determine if there are any outliers:
-The number of rides for each city type.
-The fares for each city type.
-The number of drivers for each city type.
-Create a pie chart that visualizes each of the following data for each city type:
-The percent of total fares.
-The percent of total rides.
-The percent of total drivers.
-
-In the second analysis, first code was refactored the code from Pyber to create a summary DataFrame for total rides, total drivers, total fares, and averages
+1. In the second analysis, first code was refactored the code from Pyber to create a summary DataFrame for total rides, total drivers, total fares, and averages
 
 ```
 # Get total rides by city type
@@ -56,14 +40,36 @@ total_drivers =  city_data_df.groupby(["type"]).sum()["driver_count"]
 
 ```
 
-** Refactored Code Alert!** Code from School_District_Analysis was refactored to clean up the DataFrame
+**Caution!** 
+- Using count() vs sum()
+Using city_data_df vs pyber_data_df: in order to get the accurate count of drivers by city type, the city_data_df is used over merged pyber_data_df
 
-Caution! knowing when to use count() vs sum()
-using city_data_df vs pyber_data
+**Refactored Code Ahead!** Code from School_District_Analysis was refactored to clean up the DataFrame
 
-Next, using groupby() pivot(), resample(), and loc() a  DataFrame was created to be used for a multi line graph showing total fares for each week by city type
+```
+#  8. Format the columns.
+pyber_summary_df["Total Rides"] = pyber_summary_df["Total Rides"].map("{:,}".format)
+pyber_summary_df["Total Drivers"] = pyber_summary_df["Total Drivers"].map("{:,}".format)
+pyber_summary_df["Total Fares"] = pyber_summary_df["Total Fares"].map("${:,.2f}".format)
+pyber_summary_df["Average Fare per Ride"] = pyber_summary_df["Average Fare per Ride"].map("${:,.2f}".format)
+pyber_summary_df["Average Fare per Driver"] = pyber_summary_df["Average Fare per Driver"].map("${:,.2f}".format)
+pyber_summary_df
+```
+
+- ![Clean_DF](https://user-images.githubusercontent.com/79612565/115090845-d2136180-9eca-11eb-977d-ad78abf04781.png)
+
+2. Next, using groupby() pivot(), resample(), and loc() a  DataFrame was created to be used for a multi line graph showing total fares for each week by city type so counts aren't doubled
 
 ** The index must be reset to a datetime datatype in order to resample() the DataFrame into weekly bins**
 
-Results: Using images from the summary DataFrame and multiple-line chart, describe the differences in ride-sharing data among the different city types.
-Summary: Based on the results, provide three business recommendations to the CEO for addressing any disparities among the city types.
+![Graph](https://user-images.githubusercontent.com/79612565/115090792-a8f2d100-9eca-11eb-8fcf-21565c52af1a.png)
+
+
+## Wrap It Up
+We can analyse these rsults across a 5 month multi-line graph. To start, the graph makes it easy to visualize fares across rural areas are low, however the average fare per rider is the highest most likely due to tis city type having the fewest drivers, perhaps PyBer should focus on expansion across suburban and urban over the rural cities or create incentive programs to increase rider awareness and drivers within the Rural areas.
+
+
+Secondly, Suburban rides might be increased by building brand awareness from focusing on certain demographics such as age. By pulling rider data and formatting, we could understand what kinds of riders are most active on the app. PyBer might also look to understand peak times such as the end of Februrary or March. If no outliers skew the total fares, we should look to understand what caused these spikes.  
+
+Finally, we can see from the DataFrame that drivers outweigh riders, creating the lowest average fare per ride, which might disincentivize drivers . PyBer might limit drivers in urban areas during certain times.
+
