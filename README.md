@@ -7,8 +7,9 @@ First analysis shown by the PyBer code showcase the relationshp btw type of city
 
 charts showcase relationshp between the type of city and number of drivers and riders as well as percentage of total fares of riders and drivers by type of city
 ## Devlopment
-### if you fail to plan, you plan to fail.
-In the first analysis [Pyber.ipyng](http://localhost:8888/notebooks/PyBer_Analysis/Pyber.ipynb)
+### if you fail to plan, you plan to fail
+In the first analysis [Pyber.ipyng](http://localhost:8888/notebooks/PyBer_Analysis/Pyber.ipynb) an exploratory analysis ran through some very large csv data files
+Using <<pd.merge>>, groupby()
 very large data files
 
 1. explortory analysis
