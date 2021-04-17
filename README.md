@@ -27,7 +27,7 @@ urban_avg_fare = urban_cities_df.groupby(["city"]).mean()["fare"]
 
 ```
 
-Finally, Charts including scatter, pie and box & whiskers help visualize the story expressing outliers, city type with most activity, and more. Charts showcase relationshps between the type of city and number of drivers and riders as well as percentage of total fares of riders and drivers by type of city.
+Finally, Charts including scatter, pie and box & whiskers help visualize the story expressing outliers, city type with most activity, percentages, etc. Charts showcase relationshps between the type of city and number of drivers and riders as well as percentage of total fares of riders and drivers by type of city.
 
 
 ![charts](https://user-images.githubusercontent.com/79612565/115090829-c32caf00-9eca-11eb-95ba-50adc3868ac8.png)
