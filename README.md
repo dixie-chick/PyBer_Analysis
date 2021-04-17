@@ -76,4 +76,4 @@ Secondly, Suburban rides might be increased by building brand awareness from foc
 
 Finally, we can see from the DataFrame that drivers outweigh riders, creating the lowest average fare per ride, which might disincentivize drivers. PyBer might limit drivers in urban areas during certain times.
 
-PyBer can use this code to run montly, yearly, even daily analyses and can refactor the code to be used with number  of drivers, riders and/or fares.
+PyBer can use this code to run montly, yearly, even daily analyses and can refactor the code to be used with number  of drivers, riders and/or fares as they determine which markets to penetrate and focus.
