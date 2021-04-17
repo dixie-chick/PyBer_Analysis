@@ -33,7 +33,7 @@ Finally, Charts including scatter, pie and box & whiskers help visualize the sto
 ![charts](https://user-images.githubusercontent.com/79612565/115090829-c32caf00-9eca-11eb-95ba-50adc3868ac8.png)
 
 ### Analysis 2
-1. In the second analysis, code was refactored from Analyis Pyber to create a summary DataFrame for total rides, total drivers, total fares, and averages
+1. In the second analysis, code was refactored from the Pyber Analysis to create a summary DataFrame for total rides, total drivers, total fares, and averages
 
 ```
 # Get total rides by city type
@@ -45,7 +45,7 @@ total_drivers =  city_data_df.groupby(["type"]).sum()["driver_count"]
 ```
 
 **Caution!** 
-- Using count() vs sum()
+- Using count() vs sum() to get totals for riders, fares and drivers will differ
 - Using city_data_df vs pyber_data_df: in order to get the accurate count of drivers by city type, the city_data_df is used over merged pyber_data_df so counts aren't doubled.
 
 **Refactored Code Ahead!** Code from School_District_Analysis was refactored to clean up the DataFrame
@@ -70,10 +70,9 @@ pyber_summary_df
 
 
 ## Wrap It Up
-We can analyse these rsults across a 5 month multi-line graph. To start, the graph makes it easy to visualize fares across rural areas are low, however the average fare per rider is the highest most likely due to tis city type having the fewest drivers, perhaps PyBer should focus on expansion across suburban and urban over the rural cities or create incentive programs to increase rider awareness and drivers within the Rural areas.
+We can analyze these results across a 5 month multi-line graph. To start, the graph makes it easy to see that fares across rural areas are low, however the average fare per rider is the highest. Most likely this is due to rural city type having the fewest drivers, perhaps PyBer should focus on expansion across suburban and urban over the rural cities or create incentive programs to increase rider participation and drivers within the Rural areas.
 
-
-Secondly, Suburban rides might be increased by building brand awareness from focusing on certain demographics such as age. By pulling rider data and formatting, we could understand what kinds of riders are most active on the app. PyBer might also look to understand peak times such as the end of Februrary or March. If no outliers skew the total fares, we should look to understand what caused these spikes.  
+Secondly, Suburban rides might be increased by building brand awareness from focusing on certain demographics such as age. By pulling rider data and formatting, we could understand what kinds of riders are most active on the app and create campaigns to capture other audiences. PyBer might also look to understand peak times such as the end of Februrary or March. If no outliers skew the total fares, we should look to understand what caused these spikes and mimic behavior.  
 
 Finally, we can see from the DataFrame that drivers outweigh riders, creating the lowest average fare per ride, which might disincentivize drivers. PyBer might limit drivers in urban areas during certain times.
 
