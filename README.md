@@ -6,7 +6,7 @@ This analysis for ride sharing platform, Pyber, writes Python using Pandas Libra
 
 The entire project consisted of two analyses Pyber and Pyber_Challenge broken down below.
 
-## Devlopment
+## Development
 ### if you fail to plan, you plan to fail
 There's _alot_ of data! A quick data scan followed by writing out goals of the project helps stay organized. 
 
